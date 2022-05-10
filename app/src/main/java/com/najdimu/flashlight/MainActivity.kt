@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         Handler().postDelayed({
             startActivity(Intent(this,SecondActivity::class.java))
             finish()
-        },3000)
+        },2000)
 
     }
 }

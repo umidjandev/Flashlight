@@ -1,6 +1,7 @@
 package com.najdimu.flashlight
 
 import android.content.Context
+import android.graphics.Color
 import android.hardware.camera2.CameraManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -26,11 +27,16 @@ class SecondActivity : AppCompatActivity() {
 
                 val camManager = this.getSystemService(Context.CAMERA_SERVICE) as CameraManager
                 camManager.setTorchMode(camManager.cameraIdList[0],true)
+                binding.txtTitle.setTextColor(Color.GREEN)
+                binding.txtTitle.setText("Flashlight: ON")
+                binding.switchBtn.setImageResource(R.drawable.ic_on)
 
             }else{
                 val camManager = this.getSystemService(Context.CAMERA_SERVICE) as CameraManager
                 camManager.setTorchMode(camManager.cameraIdList[0],false)
-
+                binding.txtTitle.setTextColor(Color.RED)
+                binding.txtTitle.setText("Flashlight: OFF")
+                binding.switchBtn.setImageResource(R.drawable.ic_off)
             }
         }
 
